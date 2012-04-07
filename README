@@ -1,0 +1,20 @@
+stvstats
+
+A Perl 5 script that outputs special statistics about Single Transferrable
+Vote elections in Sycamore wiki format tables (easily human readable). 
+Takes an openSTV ballot file as input.
+
+Does not actually run an STV election, but produces the following data
+about the election:
+ * Top N seats -- what if the election was vote for N candidates?
+ * Last place votes -- who got the most among voters who ranked everyone
+ * Ballot length -- how many ranks by how many voters
+
+Usage:
+
+perl stvstats.pl [-i] [-c] [-t#] filename.blt
+
+Output Options
+  -i   Print candidate IDs in the output table
+  -c   Print colors given in the file into the candidate table
+  -t#  Top # seats instead of the amount given in the ballot file

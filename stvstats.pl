@@ -2,10 +2,12 @@
 
 use warnings;
 use strict;
-use feature 'say';
+
+# by Brent Laabs, version 0.1, April 2012
+# licensed under the WTFPL -- do WTF you want with this file.
+
 
 $ARGV[0] // exit usage();
-
 
 #options
 my $printIDs = 0;
@@ -87,7 +89,7 @@ print '|| '.sprintf("%2d",$_).' || '.sprintf("%4d",$vlen[$_]).' || '.sprintf("%5
 
 sub usage {
 
-say <<USAGI;
+print <<USAGI;
 perl stvstats.pl [-i] [-c] [-t#] filename.blt
 
 Output Options

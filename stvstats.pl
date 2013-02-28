@@ -54,7 +54,11 @@ my @names = ( "John Fnord" );
 my @colors = ( "555" );
 for (1 .. $candidates) {
     $line = <$BLT> // die "Error: Too few candidates listed";
-    $line =~ /^"(.*)"/ and push @names, $1;
+    if ($line =~ /^"(.*)"/) {
+	my $name = $1;
+	$name =~ s/\\"/"/g;
+	push @names, $name;
+    }
     $line =~ /#([0-9a-fA-F]{3,6})/ and push @colors, $1;
 }
 
